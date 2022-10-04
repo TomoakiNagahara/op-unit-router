@@ -276,4 +276,14 @@ class Router implements IF_UNIT
 	{
 		return $this->_route['g11n'] ?? null;
 	}
+
+	/** Get route table.
+	 *
+	 * @created  2022-10-05
+	 * @return   array
+	 */
+	function Table()
+	{
+		return $this->_route;
+	}
 }
