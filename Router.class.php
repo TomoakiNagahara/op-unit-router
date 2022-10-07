@@ -24,6 +24,12 @@ use OP\IF_UNIT;
 use OP\Env;
 use function OP\RootPath;
 use function OP\ConvertPath;
+use OP\UNIT\Router\ROUTER_2018;
+
+/** Include
+ *
+ */
+require(__DIR__.'/ROUTER_2018.trait.php');
 
 /** Router
  *
@@ -41,7 +47,7 @@ class Router implements IF_UNIT
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_UNIT;
+	use OP_CORE, OP_UNIT, ROUTER_2018;
 
 	/** Use for route table's associative array key name.
 	 *
