@@ -1,10 +1,9 @@
 <?php
-/**
- * unit-router:/index.php
+/** op-unit-router:/Router.class.php
  *
- * @creation  2019-02-23 Separate from NewWorld.
+ * @created   2019-02-23 Separate from NewWorld.
  * @version   1.0
- * @package   unit-router
+ * @package   op-unit-router
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -16,7 +15,7 @@
  */
 namespace OP\UNIT;
 
-/** Used class.
+/** Use
  *
  */
 use OP\OP_CORE;
@@ -29,11 +28,12 @@ use function OP\ConvertPath;
 
 /** Router
  *
- * @creation  2015-01-30  Born at NewWorld.
- * @updation  2016-11-26  Separate to unit.
- * @updation  2019-02-23  Separate from NewWorld.
+ * @created   2009 NewWrold was born in Kozhikode.
+ * @created   2015-01-30  Born at NewWorld.
+ * @updated   2016-11-26  Separate to op-unit-newworld from op-core class.
+ * @updated   2019-02-23  Separate to op-unit-router from op-unit-newworld.
  * @version   1.0
- * @package   unit-router
+ * @package   op-unit-router
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -231,7 +231,7 @@ class Router implements IF_UNIT
 
 	/** EndPoint
 	 *
-	 * @creation 2019-02-23
+	 * @created  2019-02-23
 	 * @return   string
 	 */
 	function EndPoint()
@@ -241,7 +241,7 @@ class Router implements IF_UNIT
 
 	/** Args
 	 *
-	 * @creation 2019-02-23
+	 * @created  2019-02-23
 	 * @return   array
 	 */
 	function Args()
