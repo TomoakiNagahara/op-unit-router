@@ -31,11 +31,6 @@ trait ROUTER_2018 {
 	private function _Init()
 	{
 		//	...
-		if(!Env::isHttp() ){
-			return;
-		};
-
-		//	...
 		$config = Env::Get('router');
 
 		//	...
@@ -46,18 +41,28 @@ trait ROUTER_2018 {
 		//	...
 		$app_root = RootPath()['app'];
 
-		//	Separate of URL Query.
-		if( $pos   = strpos($_SERVER['REQUEST_URI'], '?') ){
-			$uri   = substr($_SERVER['REQUEST_URI'], 0, $pos);
+		//	Generate real full path.
+		if( Env::isHttp() ){
+
+			//	Separate of URL Query.
+			if( $pos   = strpos($_SERVER['REQUEST_URI'], '?') ){
+				$uri   = substr($_SERVER['REQUEST_URI'], 0, $pos);
+			}else{
+				$uri   = $_SERVER['REQUEST_URI'];
+			};
+
+			//	HTTP
+			$full_path = $_SERVER['DOCUMENT_ROOT'].$uri;
+
 		}else{
-			$uri   = $_SERVER['REQUEST_URI'];
+			//	Shell
+			$path = $_SERVER['argv'][1] ?? '';
+			$full_path = $app_root . $path;
 		};
 
-		//	Generate real full path.
-		$full_path = $_SERVER['DOCUMENT_ROOT'].$uri;
-
-		//	...
+		//	HTML pass through.
 		if( file_exists($full_path) ){
+
 			//	Get extension.
 			$extension = substr($full_path, strrpos($full_path, '.')+1);
 
@@ -94,10 +99,6 @@ trait ROUTER_2018 {
 
 		//	/foo/bar --> ['foo','bar']
 		$dirs = explode('/', $uri);
-
-		//	...
-		$this->__DebugSet(__FUNCTION__, true);
-		$this->__DebugSet(__FUNCTION__, $dirs);
 
 		//	Globalization.
 		if( ($g11n = $config['g11n'] ?? null) and $g11n['execute'] ){
