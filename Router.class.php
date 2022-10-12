@@ -20,7 +20,6 @@ namespace OP\UNIT;
  */
 use OP\OP_CORE;
 use OP\OP_UNIT;
-use OP\OP_DEBUG;
 use OP\IF_UNIT;
 use OP\Env;
 use function OP\RootPath;
@@ -42,7 +41,7 @@ class Router implements IF_UNIT
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_UNIT, OP_DEBUG;
+	use OP_CORE, OP_UNIT;
 
 	/** Use for route table's associative array key name.
 	 *
