@@ -78,6 +78,15 @@ class Router implements IF_UNIT
 	function __construct()
 	{
 		//	...
+		$this->_Init();
+		return;
+
+		//	...
+		require_once('function/CalcRoute2020.php');
+		$this->_route = \OP\UNIT\ROUTER\Calculate();
+		return;
+
+		//	...
 		if(!Env::isHttp() ){
 			return;
 		};
