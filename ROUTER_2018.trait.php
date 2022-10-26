@@ -54,7 +54,7 @@ trait ROUTER_2018 {
 			};
 
 			//	HTTP
-			$full_path = $_SERVER['DOCUMENT_ROOT'].$uri;
+			$full_path = rtrim($_SERVER['DOCUMENT_ROOT'], '/').$uri;
 
 		}else{
 			//	Shell
