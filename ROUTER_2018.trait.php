@@ -62,6 +62,9 @@ trait ROUTER_2018 {
 			$full_path = $app_root . $path;
 		};
 
+		//	Remove duplicate slash.
+		$full_path = str_replace('//', '/', $full_path);
+
 		//	HTML pass through.
 		if( file_exists($full_path) ){
 
