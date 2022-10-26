@@ -39,7 +39,9 @@ trait ROUTER_2018 {
 		$this->_route[self::_END_POINT_] = null;
 
 		//	...
-		$app_root = RootPath('app');
+		if(!$app_root = RootPath('app') ){
+			throw new \Exception('app:/ was not set.');
+		}
 
 		//	Generate real full path.
 		if( Env::isHttp() ){
