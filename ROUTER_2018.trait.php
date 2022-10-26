@@ -39,7 +39,7 @@ trait ROUTER_2018 {
 		$this->_route[self::_END_POINT_] = null;
 
 		//	...
-		$app_root = RootPath()['app'];
+		$app_root = RootPath('app');
 
 		//	Generate real full path.
 		if( Env::isHttp() ){
