@@ -65,6 +65,11 @@ trait ROUTER_2018 {
 		//	Remove duplicate slash.
 		$full_path = str_replace('//', '/', $full_path);
 
+		//	Check "asset" path.
+		if( $pos = strpos($full_path, RootPath('app').'asset/') === 0 ){
+			$full_path = RootPath('app').'404';
+		}
+
 		//	HTML pass through.
 		if( file_exists($full_path) ){
 
