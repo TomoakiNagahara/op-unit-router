@@ -59,6 +59,10 @@ trait ROUTER_2018 {
 		}else{
 			//	Shell
 			$path = $_SERVER['argv'][1] ?? '';
+			/*
+			$argv = $_SERVER['argv'][0] ?? '';
+			$path = ($argv === 'ci.php') ? '': $argv;
+			*/
 			$full_path = $app_root . $path;
 		};
 
