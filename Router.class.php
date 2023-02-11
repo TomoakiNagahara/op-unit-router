@@ -18,6 +18,7 @@ namespace OP\UNIT;
 /** Use
  *
  */
+use OP\OP_CI;
 use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
@@ -47,7 +48,7 @@ class Router implements IF_UNIT
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_UNIT, ROUTER_2018;
+	use OP_CORE, OP_UNIT, OP_CI, ROUTER_2018;
 
 	/** Use for route table's associative array key name.
 	 *
