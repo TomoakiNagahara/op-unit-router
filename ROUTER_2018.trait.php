@@ -56,6 +56,10 @@ trait ROUTER_2018 {
 			//	HTTP
 			$full_path = rtrim($_SERVER['DOCUMENT_ROOT'], '/').$uri;
 
+		}else if( Env::isCI() ){
+
+			return;
+
 		}else{
 			//	Shell
 			$path = $_SERVER['argv'][1] ?? '';
